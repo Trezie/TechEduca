@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap") * {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap") 
+
+* {  
   margin: 0;
 }
 
@@ -30,6 +32,7 @@ h6 {
 
 nav {
   position: fixed;
+  z-index: 99;
   background-color: white;
   width: 100%;
   display: flex;
@@ -45,16 +48,41 @@ nav img {
   cursor: pointer;
 }
 
+nav .navigation {
+  display: flex;
+}
+
+#menu-btn {
+  width: 10px;
+  height: 10px;
+  display: none;
+}
+
+#menu-close {
+  display: none;
+}
+
+nav.navigation{
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
 nav .navigation ul {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding-top: 20px;
 }
 
 nav .navigation ul li {
   list-style: none;
   margin-left: 30px;
+  margin-top: 20px;
 }
 
 nav .navigation ul li a {
@@ -406,3 +434,136 @@ footer .subscribe a.yellow:hover {
   color: rgb(21, 21, 100);
   background-color: white;
 }
+
+@media (max-width: 769px) {
+  nav {
+    padding: 15px 20px;
+  }
+  nav img {
+    width: 130px;
+    cursor: pointer;
+  }
+
+  #menu-btn {
+    width: 30px;
+    height: 30px;
+    display: initial;
+  }
+
+  #menu-close {
+    display: initial;
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 30px 20px 20px 20px;
+  }
+
+  nav .navigation ul {
+    position: absolute;
+    top: 0;
+    right: -220px;
+    width: 220px;
+    height: 100vh;
+    backdrop-filter: blur(4.5px);
+    background-color: rgb(17, 20, 104, 0.45);
+    border: rgba(225, 225, 225, 0.18);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    transition: 0.3s ease;
+  }
+
+  nav .navigation ul.active {
+    right: 0;
+  }
+
+  nav .navigation ul li {
+    margin-left: 0;
+    margin: 20px 0 20px 40px;
+  }
+
+  nav .navigation ul li a {
+    color: white;
+  }
+
+  #home p {
+    width: 90%;
+  }
+
+  #home h2 {
+    padding-top: 150px;
+  }
+
+  #features {
+    padding: 8vw 4vw 0 4vw;
+    text-align: center;
+  }
+
+  #courses {
+    z-index: -1;
+    padding: 8vw 4vw 0 4vw;
+    text-align: center;
+  }
+
+  #registration {
+    margin-top: 40px;
+    flex-wrap: wrap;
+    padding: 6vw 4vw 6vw 4vw;
+  }
+
+  #experts {
+    padding: 8vw 8vw 4vw 8vw;
+  }
+
+  .copyright {
+    margin-top: 10px;
+    
+  }
+
+  .copyright .pro-links {
+    margin-top: 10px;
+    padding: 0 8vw 4vw 4vw;
+  }
+}
+
+@media (max-width:475px) {
+
+  #home h2 {
+    padding-top: 200px;
+  }
+
+  #features {
+    padding: 8vw 4vw 0 4vw;
+    text-align: center;
+  }
+
+  #courses p {
+    padding: 4vw 0 4vw 0;
+  }
+
+
+
+  #registration {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  #registration {
+    margin-top: 40px;
+    padding: 6vw 8vw 10vw 8vw;
+  }
+
+  #registration .reminder .time {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 40px;
+    flex-wrap: wrap;
+  }
+}
+
+
+
